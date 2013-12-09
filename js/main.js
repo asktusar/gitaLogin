@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	if (localStorage.getItem("email") === null) {
+	if (localStorage.getItem("username") === null) {
 		$('#login_btn').click(function(){
 			$('#loading').show();
 			var form = $("#loginForm");    
@@ -20,7 +20,8 @@ $(document).ready(function(){
 						if (response.success) { 
 							alert("you're logged in");
 							window.localStorage["email"] = e;
-							window.localStorage["password"] = p;        
+							window.localStorage["password"] = p;
+							localStorage.setItem('username','e');							
 							$("#loginPage").hide();
 							$("#page2").show();
 						} 
