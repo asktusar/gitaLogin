@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.gita.example"
+    version   = "1.0.0">
+
+<name>Gandhi Institute of Technological Advancement</name>
+
+<description>
+Gandhi Institute of Technological Advancement
+</description>
+
+<author href="https://themingpress.com" email="admin@themingpress.com">
+Themingpress
+</author>
+
+<gap:plugin name="com.phonegap.plugins.childbrowser" />
+
+<access origin="*" subdomains="true" />
+<preference name="splash-screen-duration" value="5000" />
+<gap:splash src="splash.png" />
+<icon src="icon.png" />
+
+</widget>
