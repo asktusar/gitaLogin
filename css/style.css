@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* CSS Document */
+@import url("fonts.css");
+body, .page{
+	background:url(../images/page_bg.jpg) repeat;
+	color:#fff;	
+}
+.ui-bar-a {
+    background: linear-gradient(#258DCF, #1C71B3) !important;
+}
+#loading{
+	width:29px;
+	height:23px;
+	background:url(../images/loader.gif) no-repeat;
+	display:none;
+    left: 50%;
+    margin-left: -5%;
+    position: absolute;
+}
+.loginPage-title h1{
+	color: #FFFFFF;
+    display: inline-block;
+	font-family: 'allerregular';
+    font-size: 28px;
+    line-height: 1.1;
+    margin: 30px 0 0;
+    padding-top: 60px;
+    text-align: center;
+    width: 100%;
+	background:url(../images/user_icon.png) no-repeat top center;
+}
+
+#loginPage input[type=text],
+#loginPage input[type=password]{
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 0.7em 2.3em;
+    width: 76%;
+	margin:22px auto;
+}
+#loginPage input#email{
+	background: url("../images/id_icon.png") no-repeat scroll 5px 5px #FFFFFF;
+}
+#loginPage input#password{
+	background: url("../images/password_icon.png") no-repeat scroll 5px 9px #FFFFFF;
+}
+#loginPage .ui-btn-inner{
+    background: #007bd3; /* Old browsers */
+	background: -moz-linear-gradient(top, #007bd3 0%, #006fbf 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#007bd3), color-stop(100%,#006fbf)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #007bd3 0%,#006fbf 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #007bd3 0%,#006fbf 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #007bd3 0%,#006fbf 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #007bd3 0%,#006fbf 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007bd3', endColorstr='#006fbf',GradientType=0 ); /* IE6-9 */
+    border: 1px solid #489fdd;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #FFFFFF;
+    margin: 0 auto;
+    text-shadow: none;
+    width: 188px;
+}
+#loginPage .ui-btn{
+    background: none;
+    border: medium none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}

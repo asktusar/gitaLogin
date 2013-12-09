@@ -1,51 +1,56 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>Auth Demo 2</title>
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
-	<script type="text/javascript" charset="utf-8" src="cordova-1.8.1.js"></script>
-	<script src="jquery.mobile/jquery-1.7.2.min.js"></script>
-	<script src="jquery.mobile/jquery.mobile-1.1.0.min.js"></script>
-	<script src="main.js"></script>
+    <meta name="viewport" content="width=320; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Gandhi Institute for Technological Advancement</title>
+    <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.0rc2.css" type="text/css" charset="utf-8" />
+    <link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+    <link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+    <!--<script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>-->
+    <script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+    <!--<script type="text/javascript" charset="utf-8" src="js/main.js"></script>-->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
 </head>
 
-<body onload="init()">
+<body>
+    
+    <div data-role="page" id="loginPage" class="page" data-transition="flip" data-track-theme="g">
 
-<div id="launcherPage" data-role="page">
-	<!-- I'm just here waiting for deviceReady -->
-</div>
+        <div data-role="content">
 
-<div id="loginPage" data-role="page">
-
-    <div data-role="header">
-        <h1>Auth Demo</h1>
-    </div>
-
-    <div data-role="content">    
-
-        <form id="loginForm">
-        <div data-role="fieldcontain" class="ui-hide-label">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" value="" placeholder="Username" />
+			<div class="loginPage-title">
+				<h1>Enter your <br />Credentials to START!</h1>
+			</div>
+    
+            <form style="margin-top:40px;">
+                <p><input type="text" id="email" name="email"  placeholder="Enter Student ID" ></p>
+                <p><input type="password" id="password" name="password" placeholder="Password" ></p>
+                <p><input type="button" value="Enter into Student Zone" id="login_btn" class="btnLogin" /></p>
+            </form>
+            
+            <div id="loading"></div>
+            
         </div>
 
-        <div data-role="fieldcontain" class="ui-hide-label">
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" value="" placeholder="Password" />
+	</div>
+
+
+    <div data-role="page" id="page2" class="page" data-transition="flip" data-track-theme="g">
+        <div data-role="header" data-position="fixed" data-track-theme="g">
+            <h1>Student Profile</h1>
         </div>
-
-        <input type="submit" value="Login" id="submitButton">
-        </form>
-        
+    
+        <div data-role="content">
+            Content
+        </div>
+        <div data-role="footer"  data-position="fixed">
+                <h4>&copy; Gandhi Group</h4>
+        </div>
+    
     </div>
-
-    <div data-role="footer">
-        <h4>&copy; Camden Enterprises</h4>
-    </div>
-
-</div>
 
 </body>
 </html>
