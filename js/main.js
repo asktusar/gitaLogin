@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('#btn').click(function(){
+	$('#login_btn').click(function(){
 		$('#loading').show();
 		var form = $("#loginForm");    
 		var e = $("#email").val();
@@ -24,7 +24,6 @@ $(document).ready(function(){
 						$("#page2").show();
 					} 
 					else {
-				
 						$('#loading').hide();
 						alert("Your login failed! Invalid Credentials");
 						//window.location("main.html");
