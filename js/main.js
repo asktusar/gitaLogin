@@ -21,7 +21,7 @@ $(document).ready(function(){
 							window.localStorage["password"] = p;
 							localStorage.setItem('username','e');							
 							$("#loginPage").hide();
-							$.mobile.changePage( "page2.html", {
+							$.mobile.changePage( "index.html#page2", {
 								transition: "slide",
 								reverse: false,
 								changeHash: false
