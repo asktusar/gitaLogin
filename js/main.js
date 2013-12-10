@@ -23,7 +23,7 @@ $(document).ready(function(){
 							window.localStorage["password"] = p;
 							localStorage.setItem('username','e');							
 							$("#loginPage").hide();
-							$("#page2").show();
+							$(window).location('#page2');
 						} 
 						else {
 							$('#loading').hide();
@@ -49,6 +49,6 @@ $(document).ready(function(){
 		});
 	} else{
 		$("#loginPage").hide();
-		$("#page2").show();
+		$(window).location('#page2');
 	}
 });
