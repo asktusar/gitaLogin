@@ -94,7 +94,7 @@ h1.ui-title{
 	background-size:85% auto;
 }
 .ui-footer h4.ui-title {
-    font-size: 12px;
+    font-size: 15px;
     text-shadow: none;
 }
 #listsIcons{
@@ -142,6 +142,16 @@ h1.ui-title{
 }
 .ui-mobile a img, .ui-mobile fieldset {
     width: 60%;
+}
+.page p{
+    font-family: arial,sans-serif;
+    font-size: 0.9em;
+    font-weight: normal;
+    line-height: 1.5;
+	text-shadow:none;
+}
+.ui-content {
+    padding: 30px 15px;
 }
 @media screen and (orientation:landscape) {
 	#listsIcons li {

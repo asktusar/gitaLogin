@@ -5,6 +5,7 @@ $(document).ready(function(){
 			var e = $("#email").val();
 			var p = $("#password").val();
 			//console.log("click");
+			
 			if(e != "" && p != "") {
 				$.ajax({ 
 					 type: 'POST', 
@@ -32,20 +33,18 @@ $(document).ready(function(){
 							//window.location("main.html");
 						}
 
-				 },
-							 error: function(error){
-								alert('Could not connect to the database' + error);
-								//window.location = "main.html";
-							}
-				}); 
-		}
-		else {
-			//if the email and password is empty
-			alert("You must enter email and password");
-		
-		}
-		return false;
+					},
+					error: function(error){
+						alert('Could not connect to the database' + error);
+						//window.location = "main.html";
+					}
+				});
+			}else {
+				//if the email and password is empty
+				alert("You must enter email and password");
+			}
 		});
+		return false;
 	} else{
 		$("#loginPage").hide();
 		//$('#page2').show();
@@ -53,6 +52,22 @@ $(document).ready(function(){
 			transition: "pop",
 			reverse: false,
 			changeHash: false
+		});
+	}
+	
+	if (localStorage.getItem("username") != null) {
+		var e = localStorage.getItem("username");
+		$.ajax({ 
+			 type: 'POST', 
+			 url: 'http://pixelmarketing.biz/clientservertest/noticeboard.php', 
+			 crossDomain: true,
+			 data:  {username: e},
+			 dataType: 'json', 
+			 async: false,
+			 success: function (response){ 
+				alert(response);
+				$("#noticesPage .ui-content").html(response);
+			 }
 		});
 	}
 });
