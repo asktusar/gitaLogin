@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	if (localStorage.getItem("username") === null) {
-		$('#login_btn').click(function(){
+		$('#loginForm').submit(function(){
 			$.mobile.showPageLoadingMsg("b", "This is only a test", true);
 			var form = $("#loginForm");    
 			var e = $("#email").val();
@@ -24,7 +24,7 @@ $(document).ready(function(){
 							localStorage.setItem('username','e');							
 							$("#loginPage").hide();
 							$.mobile.changePage( "page2.html", {
-								transition: "pop",
+								transition: "slide",
 								reverse: false,
 								changeHash: false
 							});
