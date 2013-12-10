@@ -5,7 +5,6 @@ $(document).ready(function(){
 			var e = $("#email").val();
 			var p = $("#password").val();
 			//console.log("click");
-			
 			if(e != "" && p != "") {
 				$.ajax({ 
 					 type: 'POST', 
@@ -22,7 +21,7 @@ $(document).ready(function(){
 							window.localStorage["password"] = p;
 							localStorage.setItem('username','e');							
 							$("#loginPage").hide();
-							$.mobile.changePage( "index.html#page2", {
+							$.mobile.changePage( "page2.html", {
 								transition: "slide",
 								reverse: false,
 								changeHash: false
@@ -33,18 +32,20 @@ $(document).ready(function(){
 							//window.location("main.html");
 						}
 
-					},
-					error: function(error){
-						alert('Could not connect to the database' + error);
-						//window.location = "main.html";
-					}
-				});
-			}else {
-				//if the email and password is empty
-				alert("You must enter email and password");
-			}
-		});
+				 },
+							 error: function(error){
+								alert('Could not connect to the database' + error);
+								//window.location = "main.html";
+							}
+				}); 
+		}
+		else {
+			//if the email and password is empty
+			alert("You must enter email and password");
+		
+		}
 		return false;
+		});
 	} else{
 		$("#loginPage").hide();
 		//$('#page2').show();
