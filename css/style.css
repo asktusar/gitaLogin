@@ -140,3 +140,11 @@ h1.ui-title{
 	-webkit-border-radius:0;
 	background-size:85% auto;
 }
+.ui-mobile a img, .ui-mobile fieldset {
+    width: 60%;
+}
+@media screen and (orientation:landscape) {
+	#listsIcons li {
+		width: 32%;
+	}
+}
