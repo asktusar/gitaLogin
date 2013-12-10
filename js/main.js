@@ -1,12 +1,6 @@
 $(document).ready(function(){
 	if (localStorage.getItem("username") === null) {
 		$('#login_btn').click(function(){
-			$.mobile.loading( 'show', {
-				text: 'foo',
-				textVisible: true,
-				theme: 'z',
-				html: ""
-			});
 			var form = $("#loginForm");    
 			var e = $("#email").val();
 			var p = $("#password").val();
@@ -20,7 +14,6 @@ $(document).ready(function(){
 					 dataType: 'json', 
 					 async: false,
 					 success: function (response){ 
-						$.mobile.loading( 'hide' );
 						//alert ("response"); 
 						if (response.success) { 
 							//alert("you're logged in");
@@ -35,14 +28,12 @@ $(document).ready(function(){
 							});
 						} 
 						else {
-							$.mobile.loading( 'hide' );
 							alert("Your login failed! Invalid Credentials");
 							//window.location("main.html");
 						}
 
 				 },
 							 error: function(error){
-								$.mobile.loading( 'hide' );
 								alert('Could not connect to the database' + error);
 								//window.location = "main.html";
 							}
@@ -50,7 +41,6 @@ $(document).ready(function(){
 		}
 		else {
 			//if the email and password is empty
-			$.mobile.loading( 'hide' );
 			alert("You must enter email and password");
 		
 		}
