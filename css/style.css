@@ -20,7 +20,7 @@ body, .page{
 .loginPage-title h1{
 	color: #FFFFFF;
     display: inline-block;
-	font-family: 'allerregular';
+	font-family: 'allerregular', sans-serif;
     font-size: 28px;
     line-height: 1.1;
     margin: 30px 0 0;
@@ -66,4 +66,77 @@ body, .page{
     border: medium none;
     box-shadow: none;
     -webkit-box-shadow: none;
+}
+.ui-bar-a {
+    background: linear-gradient(#2D638A, #234F6E) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
+h1.ui-title{
+	font-size:16px;
+	font-family: 'allerregular', sans-serif;
+}
+#homeBtn{
+	background:none;
+	box-shadow:0;
+	-webkit-box-shadow:0;	
+	border:0;
+	box-shadow: none;
+    top: 7px;
+}
+#homeBtn span.ui-btn-inner{
+    background: url("../images/home_icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 33px;
+    padding: 0;
+    text-indent: -9999px;
+    width: 33px;
+	border:none;
+	border-radius:0;
+	-webkit-border-radius:0;
+	background-size:85% auto;
+}
+.ui-footer h4.ui-title {
+    font-size: 12px;
+    text-shadow: none;
+}
+#listsIcons{
+    list-style-type: none;
+    margin: 20px auto;
+    padding: 0;
+    width: 86%;
+}
+#listsIcons li{
+	display: inline-block;
+    margin: 20px 0;
+    text-align: center;
+    width: 49%;
+}
+#listsIcons li a{
+	display:block;
+	text-decoration:none;	
+}
+#listsIcons li h3{
+	color:#fff;
+	font-size:19px;
+	text-decoration:none;
+	font-family: 'allerregular', sans-serif;
+	font-weight:normal;
+	margin: 10px 0 0;
+}
+#logoutBtn{
+	background:none;
+	box-shadow:0;
+	-webkit-box-shadow:0;	
+	border:0;
+	box-shadow: none;
+    top: 7px;
+}
+#logoutBtn span.ui-btn-inner{
+    background: url("../images/logout_icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 33px;
+    padding: 0;
+    text-indent: -9999px;
+    width: 33px;
+	border:none;
+	border-radius:0;
+	-webkit-border-radius:0;
+	background-size:85% auto;
 }
