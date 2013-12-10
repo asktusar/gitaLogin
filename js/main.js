@@ -54,20 +54,4 @@ $(document).ready(function(){
 			changeHash: false
 		});
 	}
-	
-	if (localStorage.getItem("username") != null) {
-		var e = localStorage.getItem("username");
-		$.ajax({ 
-			 type: 'POST', 
-			 url: 'http://pixelmarketing.biz/clientservertest/noticeboard.php', 
-			 crossDomain: true,
-			 data:  {username: e},
-			 dataType: 'json', 
-			 async: false,
-			 success: function (response){ 
-				alert(response);
-				$("#noticesPage .ui-content").html(response);
-			 }
-		});
-	}
 });
