@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	if (localStorage.getItem("username") === null) {
-		//$('#login_btn').click(function(){
-		$("#loginForm").on( 'submit', function(){
+		$('#login_btn').click(function(){
 			var form = $("#loginForm");    
 			var e = $("#email").val();
 			var p = $("#password").val();
