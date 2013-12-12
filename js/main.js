@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	if (localStorage.getItem("username") === null) {
-		$('#login_btn').click(function(){
+		//$('#login_btn').click(function(){
+		$("#loginForm").on( 'submit', function(){
 			var form = $("#loginForm");    
 			var e = $("#email").val();
 			var p = $("#password").val();
@@ -21,7 +22,7 @@ $(document).ready(function(){
 							window.localStorage["password"] = p;
 							localStorage.setItem('username','e');							
 							$("#loginPage").hide();
-							$.mobile.changePage( "page2.html", {
+							$.mobile.changePage( "index.html#page2", {
 								transition: "slide",
 								reverse: false,
 								changeHash: false
@@ -48,9 +49,8 @@ $(document).ready(function(){
 		});
 	} else{
 		$("#loginPage").hide();
-		//$('#page2').show();
-		$.mobile.changePage( "page2.html", {
-			transition: "pop",
+		$.mobile.changePage( "index.html#page2", {
+			transition: "slide",
 			reverse: false,
 			changeHash: false
 		});
