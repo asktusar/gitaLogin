@@ -56,17 +56,55 @@ $(document).ready(function(){
 	}
 	
 	if (localStorage.getItem("username") != ''){
+		
 		var username = localStorage.getItem("username");
-		alert(username);
-		$.ajax({ 
-			 type: 'POST', 
-			 url: 'http://pixelmarketing.biz/clientservertest/noticeboard.php', 
-			 crossDomain: true,
-			 data:  {email: username},
-			 dataType: 'json', 
-			 async: false,
-			 success: function (notices){ 
-				$('#noticesPage .content').html(notices);
+		
+		// =================================================== //
+		// Load the Latest notice
+		// =================================================== //
+		
+		var noticeOutput = $('#noticesPage .content ul');
+	
+		$.ajax({
+			url: 'http://pixelmarketing.biz/clientservertest/noticeboard.php',
+			crossDomain: true,
+			dataType: 'jsonp',
+			jsonp: 'jsoncallback',
+			timeout: 5000,
+			success: function(data, status){
+				$.each(data, function(i,item){ 
+					var landmark = '<li><p class="notice-title">'+item.notice_title+'</p><small>Posted on:'+item.posted_on+'</small><p class="notice-detail">'+item.notice_detail+'</p></li>';
+				
+					noticeOutput.append(landmark);
+				});
+			},
+			error: function(){
+			   noticeOutput.text('There was an error loading the data.');
+			}
+		});
+		
+		// =================================================== //
+		// Load the Latest notice
+		// =================================================== //
+		var attendanceOutput = $('#attendancePage .content table');
+	
+		$.ajax({
+			type: 'POST',
+			url: 'http://pixelmarketing.biz/clientservertest/attendance.php',
+			crossDomain: true,
+			dataType: 'jsonp',
+			data:  {email: username},
+			jsonp: 'jsoncallback',
+			timeout: 5000,
+			success: function(data, status){
+				$.each(data, function(i,item){ 
+					var attendance = '<tr><td>'+item.date+'</td><td>'+item.attendance+'</td></tr>';
+				
+					attendanceOutput.append(attendance);
+				});
+			},
+			error: function(){
+			   attendanceOutput.text('There was an error loading the data.');
 			}
 		});
 	}
