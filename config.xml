@@ -17,6 +17,7 @@ Themingpress
 <gap:plugin name="com.phonegap.plugins.childbrowser" />
 
 <access origin="*" subdomains="true" />
+<access origin=".*" />
 <preference name="splash-screen-duration" value="5000" />
 <gap:splash src="splash.png" />
 <icon src="icon.png" />
