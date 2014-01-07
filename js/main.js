@@ -19,7 +19,7 @@ $(document).ready(function(){
 							//alert("you're logged in");
 							window.localStorage["email"] = e;
 							window.localStorage["password"] = p;
-							localStorage.setItem('username','e');							
+							localStorage.setItem('username',e);							
 							$("#loginPage").hide();
 							$.mobile.changePage( "index.html#page2", {
 								transition: "slide",
@@ -52,6 +52,22 @@ $(document).ready(function(){
 			transition: "slide",
 			reverse: false,
 			changeHash: false
+		});
+	}
+	
+	if (localStorage.getItem("username") != ''){
+		var username = localStorage.getItem("username");
+		alert(username);
+		$.ajax({ 
+			 type: 'POST', 
+			 url: 'http://pixelmarketing.biz/clientservertest/noticeboard.php', 
+			 crossDomain: true,
+			 data:  {email: username},
+			 dataType: 'json', 
+			 async: false,
+			 success: function (notices){ 
+				$('#noticesPage .content').html(notices);
+			}
 		});
 	}
 });
