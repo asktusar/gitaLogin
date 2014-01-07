@@ -89,7 +89,7 @@ $(document).ready(function(){
 		var attendanceOutput = $('#attendancePage .content table');
 	
 		$.ajax({
-			type: 'POST',
+			type: 'GET',
 			url: 'http://pixelmarketing.biz/clientservertest/attendance.php',
 			crossDomain: true,
 			dataType: 'jsonp',
