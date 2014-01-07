@@ -69,6 +69,7 @@ $(document).ready(function(){
 			url: 'http://pixelmarketing.biz/clientservertest/noticeboard.php',
 			crossDomain: true,
 			dataType: 'jsonp',
+			cache : false,
 			jsonp: 'jsoncallback',
 			timeout: 5000,
 			success: function(data, status){
@@ -92,6 +93,7 @@ $(document).ready(function(){
 			type: 'GET',
 			url: 'http://pixelmarketing.biz/clientservertest/attendance.php',
 			crossDomain: true,
+			cache : false,
 			dataType: 'jsonp',
 			data:  {email: username},
 			jsonp: 'jsoncallback',
