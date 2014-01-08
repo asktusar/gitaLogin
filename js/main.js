@@ -85,9 +85,9 @@ $(document).ready(function(){
 		});
 		
 		// =================================================== //
-		// Load the Latest attendance
+		// Load the Latest notice
 		// =================================================== //
-		var attendanceOutput = $('#attendancePage .content ul');
+		var attendanceOutput = $('#attendancePage .content table');
 	
 		$.ajax({
 			type: 'GET',
@@ -99,63 +99,14 @@ $(document).ready(function(){
 			jsonp: 'jsoncallback',
 			timeout: 5000,
 			success: function(data, status){
-				alert(username);
 				$.each(data, function(i,item){ 
-					var attendance = '<li><p>'+item.date+'</p><p>'+item.attendance+'</p></li>';
+					var attendance = '<tr><td>'+item.date+'</td><td>'+item.attendance+'</td></tr>';
 				
 					attendanceOutput.append(attendance);
 				});
 			},
 			error: function(){
 			   attendanceOutput.text('There was an error loading the data.');
-			}
-		});
-		
-		// =================================================== //
-		// Load the Latest Events List
-		// =================================================== //
-		var eventsOutput = $('#eventsPage .content ul');
-	
-		$.ajax({
-			url: 'http://pixelmarketing.biz/clientservertest/eventslist.php',
-			crossDomain: true,
-			dataType: 'jsonp',
-			cache : false,
-			jsonp: 'jsoncallback',
-			timeout: 5000,
-			success: function(data, status){
-				$.each(data, function(i,item){ 
-					var eventslist = '<li><p class="notice-title">'+item.event_title+'</p><small>Posted on:'+item.posted_on+'</small><p class="notice-detail">'+item.event_detail+'</p></li>';
-				
-					eventsOutput.append(eventslist);
-				});
-			},
-			error: function(){
-			   eventsOutput.text('There was an error loading the data.');
-			}
-		});
-		
-		// =================================================== //
-		// Load the Latest Schedules List
-		// =================================================== //
-		var schedulesOutput = $('#schedulesPage .content ul');
-	
-		$.ajax({
-			url: 'http://pixelmarketing.biz/clientservertest/schedules.php',
-			crossDomain: true,
-			dataType: 'jsonp',
-			cache : false,
-			jsonp: 'jsoncallback',
-			timeout: 5000,
-			success: function(data, status){
-				$.each(data, function(i,item){ 
-					var scheduleslist = '<li><p class="notice-title">'+item.schedule_title+'</p><small>Posted on:'+item.posted_on+'</small><p class="notice-detail">'+item.schedule_detail+'</p></li>';
-				
-					schedulesOutput.append(scheduleslist);
-				});
-			},
-			error: function(){
-			   schedulesOutput.text('There was an error loading the data.');
 			}
 		});
 	}
