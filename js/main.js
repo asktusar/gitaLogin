@@ -85,9 +85,9 @@ $(document).ready(function(){
 		});
 		
 		// =================================================== //
-		// Load the Latest notice
+		// Load the Latest attendance
 		// =================================================== //
-		var attendanceOutput = $('#attendancePage .content table');
+		var attendanceOutput = $('#attendancePage .content ul');
 	
 		$.ajax({
 			type: 'GET',
@@ -100,7 +100,7 @@ $(document).ready(function(){
 			timeout: 5000,
 			success: function(data, status){
 				$.each(data, function(i,item){ 
-					var attendance = '<tr><td>'+item.date+'</td><td>'+item.attendance+'</td></tr>';
+					var attendance = '<li><p>'+item.date+'</p><p>'+item.attendance+'</p></li>';
 				
 					attendanceOutput.append(attendance);
 				});
