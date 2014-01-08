@@ -109,7 +109,5 @@ $(document).ready(function(){
 			   attendanceOutput.text('There was an error loading the data.');
 			}
 		});
-		
-		
 	}
 });
