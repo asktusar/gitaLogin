@@ -99,6 +99,7 @@ $(document).ready(function(){
 			jsonp: 'jsoncallback',
 			timeout: 5000,
 			success: function(data, status){
+				alert(username);
 				$.each(data, function(i,item){ 
 					var attendance = '<li><p>'+item.date+'</p><p>'+item.attendance+'</p></li>';
 				
