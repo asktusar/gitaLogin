@@ -85,7 +85,7 @@ $(document).ready(function(){
 		});
 		
 		// =================================================== //
-		// Load the Latest notice
+		// Load the Latest attendance
 		// =================================================== //
 		var attendanceOutput = $('#attendancePage .content table');
 	
@@ -107,6 +107,30 @@ $(document).ready(function(){
 			},
 			error: function(){
 			   attendanceOutput.text('There was an error loading the data.');
+			}
+		});
+		
+		// =================================================== //
+		// Load the Latest Events List
+		// =================================================== //
+		var eventsOutput = $('#eventsPage .content ul');
+	
+		$.ajax({
+			url: 'http://pixelmarketing.biz/clientservertest/eventslist.php',
+			crossDomain: true,
+			dataType: 'jsonp',
+			cache : false,
+			jsonp: 'jsoncallback',
+			timeout: 5000,
+			success: function(data, status){
+				$.each(data, function(i,item){ 
+					var eventslist = '<li><p class="notice-title">'+item.event_title+'</p><small>Posted on:'+item.posted_on+'</small><p class="notice-detail">'+item.event_detail+'</p></li>';
+				
+					eventsOutput.append(eventslist);
+				});
+			},
+			error: function(){
+			   eventsOutput.text('There was an error loading the data.');
 			}
 		});
 	}
