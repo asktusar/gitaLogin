@@ -107,6 +107,29 @@ $(document).ready(function(){
 			   eventsOutput.text('There was an error loading the data.');
 			}
 		});
+		// =================================================== //
+		// Load the Latest Schedules List
+		// =================================================== //
+		var schedulesOutput = $('#schedulesPage .content ul');
+	
+		$.ajax({
+			url: 'http://pixelmarketing.biz/clientservertest/schedules.php',
+			crossDomain: true,
+			dataType: 'jsonp',
+			cache : false,
+			jsonp: 'jsoncallback',
+			timeout: 5000,
+			success: function(data, status){
+				$.each(data, function(i,item){ 
+					var scheduleslist = '<li><p class="notice-title">'+item.schedule_title+'</p><small>Posted on:'+item.posted_on+'</small><p class="notice-detail">'+item.schedule_detail+'</p></li>';
+				
+					schedulesOutput.append(scheduleslist);
+				});
+			},
+			error: function(){
+			   schedulesOutput.text('There was an error loading the data.');
+			}
+		});
 		
 		// =================================================== //
 		// Load the Latest attendance
