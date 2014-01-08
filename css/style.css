@@ -174,22 +174,31 @@ h1.ui-title{
     font-weight: normal;
     padding: 6px 0;
 }
-#noticesPage .content ul{
+#noticesPage .content ul,
+#eventsPage .content ul,
+#schedulesPage .content ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-#noticesPage .content ul li{
+#noticesPage .content ul li,
+#eventsPage .content ul li,
+#schedulesPage .content ul li{
     background: none repeat scroll 0 0 rgba(0, 190, 226, 0.5);
     border: 2px solid #074990;
     margin-bottom: 20px;
     padding: 15px 20px;
 }
-#noticesPage  p.notice-title{
+#noticesPage  p.notice-title,
+#eventsPage  p.notice-title,
+#schedulesPage  p.notice-title{
     border-bottom: 1px solid #CCCCCC;
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 11px;
     margin-top: 0;
     padding-bottom: 5px;
+}
+#locationPage iframe{
+	width:100%;
 }
