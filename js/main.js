@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	if (localStorage.getItem("username") === null) {
-		$('#login_btn').click(function(){
+		$('#loginForm').submit(function(){
 			var form = $("#loginForm");    
 			var e = $("#email").val();
 			var p = $("#password").val();
@@ -166,8 +166,4 @@ $(document).ready(function(){
 			navigator.app.backHistory()
 		}
 	}, false);
-	jQuery('#logoutBtn').click(function(){
-		localStorage.clear();
-		navigator.app.exitApp();
-	});
 });
