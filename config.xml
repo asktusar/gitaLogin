@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
-    id        = "com.gita.example"
+    id        = "com.gita.app"
     version   = "1.0.0">
 
-<name>Gandhi Institute of Technological Advancement</name>
+<name>GITA</name>
 
 <description>
-Gandhi Institute of Technological Advancement
+GITA
 </description>
 
 <author href="https://themingpress.com" email="admin@themingpress.com">
