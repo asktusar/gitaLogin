@@ -14,8 +14,6 @@ GITA
 Themingpress
 </author>
 
-<gap:plugin name="com.phonegap.plugins.childbrowser" />
-
 <access origin="*" subdomains="true" />
 <access origin=".*" />
 <preference name="splash-screen-duration" value="5000" />
